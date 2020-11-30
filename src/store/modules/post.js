@@ -11,6 +11,8 @@ export default {
         updatePosts(state, posts) {
             
             // localStorage.clear()
+            state.startObject.pole[0] = window.localStorage.getItem('zagolov')
+            state.startObject.pole[1] = window.localStorage.getItem('textPost')
 
             if(window.localStorage.getItem('myPosts') == null || window.localStorage.getItem('myPosts') === null) {
                 state.posts = posts
@@ -25,6 +27,10 @@ export default {
     },
     state: {
         
+        startObject:{
+            pole: ['winner', 'great']
+        },
+
         posts: []
 
     },
@@ -34,9 +40,9 @@ export default {
                 return p.title && p.body
             })
         },
-        // allPosts(state) {
-        //     return state.posts
-        // },
+        startObject(state) {
+            return state.startObject
+        },
         postsCount(state, getters) {
             return getters.validPosts.length
         }

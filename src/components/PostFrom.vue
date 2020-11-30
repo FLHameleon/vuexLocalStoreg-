@@ -1,19 +1,24 @@
 <template>
     <form @submit.prevent="submit">
+        <h1>{{ startData.pole[0] }}-----{{ startData.pole[1] }}</h1>
         <input type="text" placeholder="title" v-model="title">
         <input type="text" placeholder="body" v-model="body">
         <button type="submit">Create Post</button>
         <hr>
+        <button v-on:click.prevent="mySave">save</button>
     </form>
 </template>
 
 <script>
 import {mapMutations} from "vuex";
 export default {
+    props: [
+        'startData'
+    ],
     data() {
         return {
-            title: '',
-            body: ''
+            title: '' + this.startData.pole[0],
+            body: '' + this.startData.pole[1]
         }
     },
     methods: {
@@ -25,6 +30,10 @@ export default {
                 id: Date.now()
             });
             this.title = this.body = "";
+        },
+        mySave() {
+            window.localStorage.setItem('zagolov', this.title)
+            window.localStorage.setItem('textPost', this.body)
         }
     }
 }
@@ -39,4 +48,4 @@ input {
     padding: 10px;
     margin-bottom: 10px;
 }
-</style>
+</style> 
