@@ -1,28 +1,26 @@
 <template>
     <form @submit.prevent="submit">
-        <h1>{{ startData.pole[0] }}-----{{ startData.pole[1] }}</h1>
-        <input type="text" placeholder="title" v-model="title">
-        <input type="text" placeholder="body" v-model="body">
+        <input type="text" :placeholder="postfromx.pole[0]" v-model="title">
+        <input type="text" :placeholder="postfromx.pole[1]" v-model="body">
         <button type="submit">Create Post</button>
         <hr>
         <button v-on:click.prevent="mySave">save</button>
+        <button v-on:click.prevent="myDeleteLS">DeleteLocalServer</button>
     </form>
 </template>
 
 <script>
-import {mapMutations} from "vuex";
+import {mapMutations, mapGetters} from "vuex";
 export default {
-    props: [
-        'startData'
-    ],
     data() {
         return {
-            title: '' + this.startData.pole[0],
-            body: '' + this.startData.pole[1]
+            title: '',
+            body: ''
         }
     },
+    computed: mapGetters(["postfromx"]),
     methods: {
-        ...mapMutations(['createPost']),
+        ...mapMutations(['createPost', 'updatePostFromx']),
         submit() {
             this.createPost({
                 title: this.title,
@@ -31,11 +29,19 @@ export default {
             });
             this.title = this.body = "";
         },
+        myDeleteLS() {
+            window.localStorage.clear()
+        },
         mySave() {
-            window.localStorage.setItem('zagolov', this.title)
-            window.localStorage.setItem('textPost', this.body)
+            this.updatePostFromx({
+                poleOne: this.title,
+                poleTwo: this.body
+            })
         }
-    }
+    },
+  mounted() {
+    this.$store.dispatch("fetchStartPostfrmx")
+  }
 }
 </script>
 

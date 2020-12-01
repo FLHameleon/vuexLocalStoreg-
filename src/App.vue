@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <PostForm :startData = "startObject"/>
+
+
+    <PostForm/>
     <h1>{{postsCount}}</h1>
     <div class="post" v-for="post in validPosts" :key="post.id">
       <h2>{{post.title}}</h2>
       <p>{{post.body}}</p>
     </div>
+
+
   </div>
 </template>
 
@@ -13,13 +17,14 @@
 import {mapGetters, mapActions} from 'vuex'
 import PostForm from './components/PostFrom'
 export default {
+  
   name: 'App',
-  computed: mapGetters(["validPosts", "postsCount", "startObject"]),
+  computed: mapGetters(["validPosts", "postsCount"]),
   methods: mapActions(['fetchPosts']),
   components: { PostForm },
   async mounted() {
-  //  this.$store.dispatch("fetchPosts")
-  this.fetchPosts();
+    // this.$store.dispatch("fetchPosts")
+    this.fetchPosts();
   }
 }
 </script>
