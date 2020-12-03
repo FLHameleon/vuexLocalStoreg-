@@ -15,8 +15,8 @@
 
 <script>
 import {mapGetters, mapActions} from 'vuex'
-// /home/iai/workOcen3/30112020/0819/src
-import PostForm from '/home/iai/workOcen3/30112020/0819/src/components/PostFrom'
+// @
+import PostForm from '@/components/PostFrom'
 export default {
   
   name: 'App',

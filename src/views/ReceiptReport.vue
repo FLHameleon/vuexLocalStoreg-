@@ -27,7 +27,7 @@
 
     <router-link to="/">Назад</router-link>
     
-    <p>{{ allModReceiptReport }}</p>
+    <!-- <p>{{ allModReceiptReport }}</p> -->
 
   </div>
 </template>
@@ -35,11 +35,11 @@
 <script>
 import {mapMutations, mapGetters} from 'vuex'
 
-import dannieText from '/home/iai/workOcen3/30112020/0819/src/components/dannieText'
-import dannieDate from '/home/iai/workOcen3/30112020/0819/src/components/dannieDate'
-import dannieNumber from '/home/iai/workOcen3/30112020/0819/src/components/dannieNumber'
-import dannieEmail from '/home/iai/workOcen3/30112020/0819/src/components/dannieEmail'
-import danniePhone from '/home/iai/workOcen3/30112020/0819/src/components/danniePhone'
+import dannieText from '@/components/dannieText'
+import dannieDate from '@/components/dannieDate'
+import dannieNumber from '@/components/dannieNumber'
+import dannieEmail from '@/components/dannieEmail'
+import danniePhone from '@/components/danniePhone'
 
 export default {
   name: 'app',
@@ -62,7 +62,7 @@ export default {
 
       DateTime: {
         idName: 'DateTime',
-        zagolovok: 'Дата и время приема отчета:'
+        zagolovok: 'Дата приема отчета:'
       },
 
       numberRegistr: {

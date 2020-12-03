@@ -1,17 +1,15 @@
 <template>
   <div>
 
-    <label  v-bind:class="{done: (onSubmit() && (/^([А-Я]|[а-я]|[A-Z]|[a-z]|[0-9]){5,}$/.test(rezult.message)))}">{{ startData.zagolovok }}</label>
-    <p>
-    <input type="password" v-model="rezult.message">
+    <label v-bind:class="{done: (onSubmit())}">{{ startData.zagolovok }}:</label>
 
-    </p>
+    <input type="date" value="1988-07-05" min="1950-01-01" max="2020-09-01" v-model="rezult.message" />
 
   </div>
 </template>
 
 <script>
-//Сравнить с анкетой на vue
+// Если проверка истина то отправить message на главн форму
 export default {
   props: [
     'startData'
@@ -20,20 +18,17 @@ export default {
     return {
       rezult: {
         idName: ('' + this.startData.idName),
-        message: ''
+        message: '2020-08-12'
       }
     }
   },
   methods: {
     onSubmit() {
-      // this.$store.dispatch('SAVE_TODO', item);
-
       var otpr = Object.assign({}, this.rezult);
       
-      otpr.message = otpr.message
       this.$emit('rezault', otpr)
-
-      return true
+      
+      return false
     }
   }
 }

@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '/home/iai/workOcen3/30112020/0819/src/views/Home'
-import Userposts from '/home/iai/workOcen3/30112020/0819/src/views/UserPosts'
-import ReceiptFine from '/home/iai/workOcen3/30112020/0819/src/views/ReceiptFine'
-import ReceiptReport from '/home/iai/workOcen3/30112020/0819/src/views/ReceiptReport'
-import ReceiptLK from '/home/iai/workOcen3/30112020/0819/src/views/ReceiptLK'
-import DataBase from '/home/iai/workOcen3/30112020/0819/src/views/DataBase'
-
-// import Registri from '/home/iai/workOcen3/30112020/0819/src/views/Registri'
+import Home from '@/views/Home'
+import Anketa from '@/views/Anketa'
+import Userposts from '@/views/UserPosts'
+import ReceiptFine from '@/views/ReceiptFine'
+import ReceiptReport from '@/views/ReceiptReport'
+import ReceiptLK from '@/views/ReceiptLK'
+import DataBase from '@/views/DataBase'
+import Registri from '@/views/Registri'
 
 Vue.use(Router)
 
@@ -18,6 +18,10 @@ export default new Router({
     {
       path: '/',
       component: Home
+    },
+    {
+      path: '/anketa',
+      component: Anketa
     },
     {
       path: '/userposts',
@@ -38,11 +42,10 @@ export default new Router({
     {
       path: '/dataBase',
       component: DataBase
+    },
+    {
+      path: '/registri',
+      component: Registri
     }
-    // ,
-    // {
-    //   path: '/registri',
-    //   component: Registri
-    // }
   ]
 })

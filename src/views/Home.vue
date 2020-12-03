@@ -2,13 +2,18 @@
   <div>
     <h1>Главная страница</h1>
 
+    <p><router-link to="/anketa">Регистрация</router-link></p>
+
     <h5>Выберите квитанцию необходимую для заполнения:</h5>
 
-    <!-- <p><router-link to="/registri">Регистрация</router-link></p> -->
+
     <p><router-link to="/receiptLK">Квитанция л. к.</router-link></p>
     <p><router-link to="/receiptReport">Квитанция о приеме отчета</router-link></p>
     <p><router-link to="/receiptFine">Квитанция штраф</router-link></p>
-    <p><router-link to="/dataBase">База данных</router-link></p>
+    <hr>
+    <hr>
+    <hr>
+    <p><router-link to="/registri">Вход в базу данных</router-link></p>
 
     <p><router-link to="/userposts">Оставить отзыв о приложении</router-link></p>
 

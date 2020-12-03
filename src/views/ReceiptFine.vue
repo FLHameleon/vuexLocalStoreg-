@@ -13,7 +13,7 @@
 
 
 <dannieText :startData="FormName" @rezault="rezultAnket"/>
-<p>Дата и время генерации квитанции:     <dannieDate :startData="DateTime" @rezault="rezultAnket"/></p>
+<p>Дата генерации квитанции:     <dannieDate :startData="DateTime" @rezault="rezultAnket"/></p>
 <p>Регистрационный №: <dannieNumber :startData="numberRegistr" @rezault="rezultAnket"/></p>
 <p></p>
 <p></p>
@@ -35,7 +35,7 @@
     <button v-if="!isNeAktiv" @click.prevent="messAnket" disabled>Отправить</button>
     <button v-else @click.prevent="messAnket">Отправить</button>
 
-    <p>{{ allModReceiptFine }}</p>
+    <!-- <p>{{ allModReceiptFine }}</p> -->
 
     </form>
 
@@ -47,11 +47,11 @@
 <script>
 import {mapMutations, mapGetters} from 'vuex'/////////////////////////
 
-import dannieText from '/home/iai/workOcen3/30112020/0819/src/components/dannieText'
-import dannieDate from '/home/iai/workOcen3/30112020/0819/src/components/dannieDate'
-import dannieNumber from '/home/iai/workOcen3/30112020/0819/src/components/dannieNumber'
-import dannieEmail from '/home/iai/workOcen3/30112020/0819/src/components/dannieEmail'
-import danniePhone from '/home/iai/workOcen3/30112020/0819/src/components/danniePhone'
+import dannieText from '@/components/dannieText'
+import dannieDate from '@/components/dannieDate'
+import dannieNumber from '@/components/dannieNumber'
+import dannieEmail from '@/components/dannieEmail'
+import danniePhone from '@/components/danniePhone'
 
 export default {
   name: 'app',
@@ -72,7 +72,7 @@ export default {
 
       DateTime: {
         idName: 'DateTime',
-        zagolovok: 'Дата и время'
+        zagolovok: 'Дата'
       },
 
       numberRegistr: {
