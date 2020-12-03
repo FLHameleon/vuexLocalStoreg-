@@ -8,6 +8,10 @@ import modReceiptLK from './modules/modView/modReceiptLK'
 import modReceiptFine from './modules/modView/modReceiptFine'
 import modReceiptReport from './modules/modView/modReceiptReport'
 import modDataBase from './modules/modView/modDataBase'
+import modRegistri from './modules/modView/modRegistri'
+import modInDBase from './modules/modView/modInDBase'
+
+
 
 Vue.use(Vuex)
 
@@ -18,6 +22,8 @@ export default new Vuex.Store({
         modReceiptLK,
         modReceiptFine,
         modReceiptReport,
-        modDataBase
+        modDataBase,
+        modRegistri,
+        modInDBase
     }
 })

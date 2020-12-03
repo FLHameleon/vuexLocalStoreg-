@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/views/Home'
-import Anketa from '@/views/Anketa'
+import Registri from '@/views/Registri'
 import Userposts from '@/views/UserPosts'
 import ReceiptFine from '@/views/ReceiptFine'
 import ReceiptReport from '@/views/ReceiptReport'
 import ReceiptLK from '@/views/ReceiptLK'
 import DataBase from '@/views/DataBase'
-import Registri from '@/views/Registri'
+import inDBase from '@/views/inDBase'
 
 Vue.use(Router)
 
@@ -20,8 +20,8 @@ export default new Router({
       component: Home
     },
     {
-      path: '/anketa',
-      component: Anketa
+      path: '/registri',
+      component: Registri
     },
     {
       path: '/userposts',
@@ -44,8 +44,8 @@ export default new Router({
       component: DataBase
     },
     {
-      path: '/registri',
-      component: Registri
+      path: '/inDBase',
+      component: inDBase
     }
   ]
 })

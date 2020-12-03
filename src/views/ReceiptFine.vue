@@ -32,8 +32,8 @@
 <p>БИК банка – 310101001;</p>
 <p>Код классификации доходов бюджета - 12011601033010000140 </p>
 
-    <button v-if="!isNeAktiv" @click.prevent="messAnket" disabled>Отправить</button>
-    <button v-else @click.prevent="messAnket">Отправить</button>
+    <button v-if="!isNeAktiv" disabled>Отправить</button>
+    <button v-else @click="messAnket">Отправить</button>
 
     <!-- <p>{{ allModReceiptFine }}</p> -->
 

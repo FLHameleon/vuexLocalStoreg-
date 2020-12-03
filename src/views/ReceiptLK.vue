@@ -22,8 +22,8 @@
     <dannieEmail :startData="emailSupport" @rezault="rezultAnket"/>
     <danniePhone :startData="phoneSupport" @rezault="rezultAnket"/>
 
-    <button v-if="!isNeAktiv" @click.prevent="messAnket" disabled>Отправить</button>
-    <button v-else @click.prevent="messAnket">Отправить</button>
+    <button v-if="!isNeAktiv" disabled>Отправить</button>
+    <button v-else @click="messAnket">Отправить</button>
 
     <hr>
 

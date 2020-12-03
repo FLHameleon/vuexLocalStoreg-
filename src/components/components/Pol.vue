@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     onSubmit() {
+      // console.log($pol)
       var otpr = Object.assign({}, this.rezult);
       otpr.message = 'Men'
       this.$emit('rezault', otpr)

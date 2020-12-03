@@ -16,6 +16,7 @@ export default {
             } else {
                 state.modReceiptLKs = JSON.parse(window.localStorage.getItem(nameLS.dataName))
             }
+            // console.log('export 22222222222222')
         },
         upDateModReceiptLK(state, newObj) { // добарвение объекта с данными в LS
             state.modReceiptLKs.unshift(newObj)

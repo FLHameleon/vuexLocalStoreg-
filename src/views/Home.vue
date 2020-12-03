@@ -2,7 +2,7 @@
   <div>
     <h1>Главная страница</h1>
 
-    <p><router-link to="/anketa">Регистрация</router-link></p>
+    <p><router-link to="/registri">Регистрация</router-link></p>
 
     <h5>Выберите квитанцию необходимую для заполнения:</h5>
 
@@ -13,7 +13,7 @@
     <hr>
     <hr>
     <hr>
-    <p><router-link to="/registri">Вход в базу данных</router-link></p>
+    <p><router-link to="/inDBase">Вход в базу данных</router-link></p>
 
     <p><router-link to="/userposts">Оставить отзыв о приложении</router-link></p>
 
