@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import {mapMutations, mapGetters} from 'vuex'
+import {mapMutations} from 'vuex'
 
 import dannieText from '@/components/dannieText'
 import dannieDate from '@/components/dannieDate'
@@ -47,9 +47,6 @@ import danniePhone from '@/components/danniePhone'
 
 export default {
   name: 'app',
-
-  computed: mapGetters(["allModReceiptLK"]),
-
 
   data() {
     return {
@@ -124,9 +121,6 @@ export default {
     },
   components: {
     dannieText, dannieDate, dannieNumber, dannieEmail, danniePhone
-  },
-  mounted() {
-    this.$store.dispatch("fetchModReceiptLK")
   }
 }
 </script>

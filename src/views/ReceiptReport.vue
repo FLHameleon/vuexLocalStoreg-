@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import {mapMutations, mapGetters} from 'vuex'
+import {mapMutations} from 'vuex'
 
 import dannieText from '@/components/dannieText'
 import dannieDate from '@/components/dannieDate'
@@ -43,9 +43,6 @@ import danniePhone from '@/components/danniePhone'
 
 export default {
   name: 'app',
-
-  computed: mapGetters(["allModReceiptReport"]),//////////////////////////////////
-
   data() {
     return {
       isNeAktiv: true,
@@ -69,10 +66,6 @@ export default {
         idName: 'numberRegistr',
         zagolovok: 'Регистрационный №:'
       }
-
-
-
-
     }
   },
 
@@ -96,19 +89,12 @@ export default {
                 id: Date.now()//////////////////////
             });//////////////////////
       alert('Сохранено')
-
-
-        // alert('Объект отправлен содержимое можно посмотреть в консоле.')
-        // console.log(this.sborkaUser)
       }
      
     },
 
   components: {
     dannieText, dannieDate, dannieNumber, dannieEmail, danniePhone
-  },
-  mounted() {
-    this.$store.dispatch("fetchModReceiptReport")//////////////////////////
   }
 }
 </script>

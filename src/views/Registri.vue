@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import {mapMutations, mapGetters} from 'vuex'/////////////////////////////////////////////////
+import {mapMutations} from 'vuex'/////////////////////////////////////////////////
 
 import FIO from '@/components/components/FIO'
 import Pol from '@/components/components/Pol'
@@ -45,9 +45,6 @@ import Password from '@/components/components/Password'
 
 export default {
   name: 'app',
-
-  computed: mapGetters(["allModRegistri"]),//////////////////
-
   data() {
     return {
       isAktiv: false,
@@ -142,16 +139,11 @@ export default {
           myData: this.sborkaUser,
           id: Date.now()
       });
-      alert('Сохранено')
-      // console.log('button ', this.isAktiv)
-      // console.log(this.sborkaUser)      
+      alert('Сохранено')    
     }
   },
   components: {
     FIO, Pol, Phone, DateOfBirth, Education, WorkExperience, Salary, Email, Password
-  },
-  mounted() {
-    this.$store.dispatch("fetchModRegistri")////////////////////////////////////
   }
 }
 </script>

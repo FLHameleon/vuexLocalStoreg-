@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import {mapMutations, mapGetters} from 'vuex'/////////////////////////
+import {mapMutations} from 'vuex'/////////////////////////
 
 import dannieText from '@/components/dannieText'
 import dannieDate from '@/components/dannieDate'
@@ -55,7 +55,6 @@ import danniePhone from '@/components/danniePhone'
 
 export default {
   name: 'app',
-  computed: mapGetters(["allModReceiptFine"]),////////////////////////////////
   data() {
     return {
       isNeAktiv: true,
@@ -106,12 +105,8 @@ export default {
 
       }
     },
-
   components: {
     dannieText, dannieDate, dannieNumber, dannieEmail, danniePhone
-  },
-  mounted() {
-    this.$store.dispatch("fetchModReceiptFine")/////////////////////////////
   }
 }
 </script>

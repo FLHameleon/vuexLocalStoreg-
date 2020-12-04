@@ -3,22 +3,11 @@ const nameLS = {
 }
 
 export default {
-    actions: {
-        fetchModReceiptLK({commit}) { // кастыль надо чтомы запускало сразу мутацию
-            const modReceiptLKs = []
-            commit('startModReceiptLK', modReceiptLKs) // запуск мутании заливки стартовых данных
-        }
-    },
+    actions: {},
     mutations: {
-        startModReceiptLK(state, modReceiptLKs) { // стартовое заполнение
-            if(window.localStorage.getItem(nameLS.dataName) == null || window.localStorage.getItem(nameLS.dataName) === null) {
-                state.modReceiptLKs = modReceiptLKs
-            } else {
-                state.modReceiptLKs = JSON.parse(window.localStorage.getItem(nameLS.dataName))
-            }
-            // console.log('export 22222222222222')
-        },
         upDateModReceiptLK(state, newObj) { // добарвение объекта с данными в LS
+            let byfer22 = JSON.parse(window.localStorage.getItem(nameLS.dataName))
+            state.modReceiptLKs = byfer22
             state.modReceiptLKs.unshift(newObj)
             window.localStorage.setItem(nameLS.dataName, JSON.stringify(state.modReceiptLKs))
         }
@@ -28,10 +17,5 @@ export default {
         modReceiptLKs: []
     },
 
-    getters: {
-        
-        allModReceiptLK(state) { // вывод всех данных
-            return state
-        }
-    }
+    getters: {}
 }
