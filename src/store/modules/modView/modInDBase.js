@@ -6,7 +6,6 @@ export default {
     actions: {
         fetchStartInDBase(myctx) {
             const res = ''
-
             myctx.commit('startInDBase', res)
         }
     },
@@ -15,9 +14,7 @@ export default {
             state.login = ''
         },
         checkData(state, myData) {
-            window.localStorage.setItem(nameLS.userLogin, myData.myData.dannieEmail)
             state.login = myData.myData.dannieEmail
-            window.localStorage.setItem(nameLS.userPassword, myData.myData.danniePassword)
             state.password = myData.myData.danniePassword
         }
     },
@@ -32,10 +29,7 @@ export default {
             let isFlaf32 = false
 
             allData = JSON.parse(window.localStorage.getItem('modRegistri'))
-            console.log('vse dannie', allData)
             allData.forEach(element => {
-                // console.log('login ',element.myData.dannieEmail)
-                // console.log('parol ',element.myData.danniePassword)
                 if(state.login == element.myData.dannieEmail && state.password == element.myData.danniePassword) {
                     state.login = ''
                     state.password = ''
@@ -45,16 +39,9 @@ export default {
 
 
             if(isFlaf32) {
-                console.log('yes')
                 return true
             }
-            // if(state.login == 'admin@gmail.com' && state.password == 'admin') {
-            //     // state.login = ''
-            //     // state.password = ''
-            //     return true
-            // }
-
-            console.log('no')
+            
         return false
         }
     }

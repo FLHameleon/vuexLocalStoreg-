@@ -16,17 +16,12 @@ export default {
             } else {
                 nameLS.modsData.forEach(elem => state.modDatas.unshift(JSON.parse(window.localStorage.getItem(elem))))
             }
-            // console.log('0' ,state)
-            // console.log('1' ,state.modDatas[0])
-            // console.log('2' ,state.modDatas[1])
-            // console.log('3' ,state.modDatas[2])
         }
     },
 
     state: {
         modDatas: []
     },
-
     getters: {
         allModDatas(state) { // вывод всех данных
             return state.modDatas

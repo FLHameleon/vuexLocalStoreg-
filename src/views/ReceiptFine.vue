@@ -97,12 +97,12 @@ export default {
 
       },
       messAnket() {
-            this.upDateModReceiptFine({
-                myData: this.sborkaUser,
-                id: Date.now()
-            });///////////////////////////////////////
-        alert('Объект отправлен содержимое можно посмотреть в консоле.')
-        console.log(this.sborkaUser)
+        this.upDateModReceiptFine({
+          myData: this.sborkaUser,
+          id: Date.now()
+        });///////////////////////////////////////
+
+        alert('Сохранено')
 
       }
     },

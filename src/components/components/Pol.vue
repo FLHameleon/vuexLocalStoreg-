@@ -1,15 +1,12 @@
 <template>
     <div>
         <label>{{ startData.zagolovok }}:</label>
-            <label>Мужской:<input v-bind:class="{done: onSubmit()}" name="polUser" type="radio" value="Men" checked/></label>
-            <label>Женский:<input v-bind:class="{done: onSubmit()}" name="polUser" type="radio" value="Women"/></label>
+            <label>Мужской:<input v-bind:class="{done: onSubmit()}" name="polUser" type="radio" value="Men" v-model="rezult.message"/></label>
+            <label>Женский:<input v-bind:class="{done: onSubmit()}" name="polUser" type="radio" value="Women" v-model="rezult.message"/></label>
     </div>
 </template>
 
 <script>
-//Доделать чтобы реагировало на изменения
-  // $pol: document.querySelector("input[name=polUser]:checked").value,
-
 export default {
   props: [
     'startData'
@@ -18,16 +15,13 @@ export default {
     return {
       rezult: {
         idName: ('' + this.startData.idName),
-        message: 'Men'
+        message: ''
       }
     }
   },
   methods: {
     onSubmit() {
-      // console.log($pol)
-      var otpr = Object.assign({}, this.rezult);
-      otpr.message = 'Men'
-      this.$emit('rezault', otpr)
+      this.$emit('rezault', this.rezult)
 
       return false
     }

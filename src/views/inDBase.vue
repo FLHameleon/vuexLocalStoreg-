@@ -15,12 +15,10 @@
 
     <div v-else>
 
-      <div v-if="allModRezault">
-      <button @click.prevent><router-link to="/dataBase">Ввод</router-link></button>
-      </div>
+      <button @click.prevent="checkDannie">Ввод</button>
 
-      <div v-else>
-      <button @click.prevent="errorInform">Ввод</button>
+      <div v-if="isDataBase">
+        <router-link to="/dataBase">Перейти к архиву</router-link>
       </div>
 
     </div>
@@ -48,7 +46,7 @@ export default {
   data() {
     return {
       isNeAktiv: true,
-      isVernDannie: false,
+      isDataBase: false,
       sborkaUser: {},
 
       dannieEmail: {
@@ -59,18 +57,12 @@ export default {
       danniePassword: {
         idName: 'danniePassword',
         zagolovok: 'Пароль: '
-      },
-
-      avtorizUser: {
-        dannieEmail: 'hhhhhhhhhadmin@gmail.com',
-        danniePassword: 'admin'
       }
-
     }
   },
 
   methods: {
-      ...mapMutations(['checkData']),/////////
+      ...mapMutations(['checkData']),
       rezultAnket(todo) {
         this.sborkaUser[todo.idName] = todo.message
 
@@ -79,39 +71,21 @@ export default {
           if(this.sborkaUser[key] == '') {
             this.isNeAktiv = false
             return
-            // break
           }
         }
-
-        this.isVernDannie = false
-        for (let key in this.sborkaUser) {
-          if(this.sborkaUser[key] != this.avtorizUser[key]) {
-            this.isVernDannie = false
-            return
-            // break
-
-          }
-        }
-
-
-        this.isVernDannie = true
       },
-      errorInform() {
-
-        this.checkData({////////////////////////checkData
-            myData: this.sborkaUser
+      checkDannie() {
+          this.checkData({
+          myData: this.sborkaUser
         });
 
-        console.log(this.sborkaUser)
-        alert('Ошибка.')
-      },
-      
-      messAnket() {
-
-
-        // alert('Ошибка.')
-        // alert('Объект отправлен содержимое можно посмотреть в консоле.')
-        console.log(this.sborkaUser)
+        if(this.allModRezault) {
+          this.isDataBase = true
+          alert('Данные верные можете пройти в баду данных.')
+        } else {
+          this.isDataBase = false
+          alert('Ошибка.')
+        }
       }
      
     },
@@ -120,7 +94,7 @@ export default {
     dannieEmail, danniePassword
   },
   mounted() {
-    this.$store.dispatch("fetchStartInDBase")/////////////
+    this.$store.dispatch("fetchStartInDBase")
   }
 }
 </script>

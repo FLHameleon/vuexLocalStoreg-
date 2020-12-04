@@ -137,13 +137,14 @@ export default {
   
     },
     messAnket() {
+      
       this.upDateModRegistri({
           myData: this.sborkaUser,
           id: Date.now()
       });
-
+      alert('Сохранено')
       // console.log('button ', this.isAktiv)
-      console.log(this.sborkaUser)      
+      // console.log(this.sborkaUser)      
     }
   },
   components: {

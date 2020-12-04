@@ -43,7 +43,6 @@
 
 <script>
 import {mapGetters, mapActions} from 'vuex'
-// /home/iai/workOcen3/30112020/0819/src
 export default {
   name: 'App',
   computed: mapGetters(["allModDatas"]),

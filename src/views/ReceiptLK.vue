@@ -115,8 +115,11 @@ export default {
                 myData: this.sborkaUser,
                 id: Date.now()
             });
-        alert('Объект отправлен содержимое можно посмотреть в консоле.')
-        console.log(this.sborkaUser)
+
+
+        alert('Сохранено')
+        // alert('Объект отправлен содержимое можно посмотреть в консоле.')
+        // console.log(this.sborkaUser)
       }
     },
   components: {
